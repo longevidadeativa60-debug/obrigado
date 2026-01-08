@@ -76,30 +76,42 @@
             font-size: 20px;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #6B4C9A 0%, #7D5EA8 30%, #4ECDC4 100%);
-            padding: 60px 30px;
-            position: relative;
-            overflow: hidden;
-        }
+  .hero {
+    background: linear-gradient(135deg, #6B4C9A 0%, #7D5EA8 30%, #4ECDC4 100%);
+    padding: 60px 30px;
+    position: relative;
+    overflow: hidden;
+    /* ADICIONADO PARA CENTRALIZAR VERTICALMENTE */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* Opcional: define uma altura mínima */
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-            opacity: 0.3;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+    opacity: 0.3;
+}
 
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    /* ADICIONADO PARA CENTRALIZAR O TEXTO E ELEMENTOS INTERNOS */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
         .badge {
             display: inline-block;
@@ -114,23 +126,23 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .hero h1 {
-            color: white;
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            max-width: 800px;
-        }
+.hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    /* AJUSTADO: max-width removido ou alterado para permitir centralização */
+    max-width: 800px; 
+}
 
-        .hero-subtitle {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 22px;
-            font-weight: 300;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
-
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 22px;
+    font-weight: 300;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
         .download-callout {
             background: rgba(255, 255, 255, 0.9);
             color: #6B4C9A;
@@ -611,6 +623,55 @@
                 padding: 30px 20px;
             }
         }
+
+
+
+        /* Estilos extraídos do seu arquivo original */
+    .ebook-showcase {
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 400px; /* Ajuste opcional para largura máxima */
+        font-family: 'Inter', sans-serif;
+    }
+
+    .ebook-mockup {
+        width: 280px;
+        height: 360px;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(107, 76, 154, 0.4); /* Sombra roxa característica */
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebook-mockup img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+        display: block;
+    }
+
+    .ebook-showcase h3 {
+        color: #1a202c; 
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .ebook-showcase p {
+        color: #64748b; 
+        font-size: 14px;
+    }
     </style>
 </head>
 <body>
@@ -625,9 +686,21 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-content">
+            
             <div class="badge">✓ Ebook Confirmado</div>
-            <h1>🎉 Parabéns! Seu Ebook Gratuito Está Liberado</h1>
+            <h1>Parabéns! Seu Ebook Gratuito Está Liberado</h1>
             <p class="hero-subtitle">Você acaba de dar o primeiro passo para reativar seu metabolismo após os 40.</p>
+
+    <div class="ebook-showcase">
+    <div class="ebook-mockup">
+        <img src="https://i.ibb.co/G33tRWLF/pasted-file-Kdje-FA-image-png.jpg" 
+             alt="Capa do Ebook: O Guia da Mulher 40+"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=color:#666;text-align:center;padding:20px>Imagem do E-book<br>📚</div>'">
+    </div>
+    <h3>Material Exclusivo</h3>
+    <p>Conteúdo desenvolvido por especialistas em saúde e longevidade ativa</p>
+</div>
+
             <!-- Chamada para Download -->
             <div class="download-callout">
                 ⬇️ O download do seu ebook está logo abaixo.
@@ -635,6 +708,8 @@ Antes disso, preparei um presente opcional para acelerar seus resultados.
             </div>
         </div>
     </div>
+
+ 
 
     <!-- Main Content -->
     <div class="main-content">
